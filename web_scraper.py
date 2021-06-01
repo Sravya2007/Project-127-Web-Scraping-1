@@ -1,7 +1,4 @@
-from sys import platform
-import time
 import csv
-from selenium import webdriver
 from bs4 import BeautifulSoup
 import requests
 
@@ -11,8 +8,6 @@ WEBSITE_URL = "https://en.wikipedia.org/wiki/List_of_brightest_stars_and_other_r
 webpage = requests.get(WEBSITE_URL, verify = False)
 
 headers = ["V Mag. (mV)", "Proper name", "Bayer designation", "Distance (ly)", "Spectral class", "Mass (M☉)", "Radius (R☉)", "Luminosity (L☉)"]
-
-star_data_list = []
 
 #webpage.text returns in html format
 soup = BeautifulSoup(webpage.text, "html.parser")
